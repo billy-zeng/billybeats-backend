@@ -1,20 +1,20 @@
 const db = require('../models');
 
 const index = (req, res) => {
-  db.Artist.find({})
-  .populate('songs')
-  .exec((err, allArtists) => {
+  db.Song.find({})
+  .populate('artist')
+  .exec((err, allSongs) => {
     if (err) return res.status(500).json({ message: "Something went wrong, try again"});
-    res.status(200).json(allArtists);
+    res.status(200).json(allSongs);
   });
 };
 
 const show = (req, res) => {
-  db.Artist.findById(req.params.id)
-    .populate('songs')
-    .exec((err, foundArtist) => {
+  db.Song.findById(req.params.id)
+    .populate('artist')
+    .exec((err, foundSong) => {
       if (err) return res.status(500).json({ message: "Something went wrong, try again"});
-    res.status(200).json(foundArtist);
+    res.status(200).json(foundSong);
   });
 };
 
