@@ -14,7 +14,7 @@ const show = (req, res) => {
     .populate('songs')
     .exec((err, foundArtist) => {
       if (err) return res.status(500).json({ message: "Something went wrong, try again"});
-    res.status(200).json(foundTeam);
+    res.status(200).json(foundArtist);
   });
 };
 
