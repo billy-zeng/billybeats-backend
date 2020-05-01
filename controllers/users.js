@@ -26,6 +26,32 @@ const edit = (req, res) => {
   });
 };
 
+// follow an artist
+const addArtist = async (req, res) => {
+  try {
+    const updatedUser = await db.User.findById(req.session.currentUser.id);
+    // const updatedUser = await db.User.findById(req.params.id);
+    updatedUser.following.push(req.params.artistId);
+    updatedUser.save();
+    res.status(200).json(updatedUser);
+  } catch (err) {
+    return res.status(500).json({ message: "Something went wrong, try again" });
+  }
+};
+
+// unfollow an artist
+const removeArtist = async (req, res) => {
+  try {
+    let updatedUser = await db.User.findById(req.session.currentUser.id);
+    // const updatedUser = await db.User.findById(req.params.id);
+    updatedUser.players.pull({ _id: req.params.artistId })
+    updatedUser.save();
+    res.status(200).json(updatedUser);
+  } catch (err) {
+    return res.status(500).json({ message: "Something went wrong, try again", err: err });
+  };
+};
+
 // add song to a user's likes
 const addSong = async (req, res) => {
   try {
@@ -53,32 +79,6 @@ const removeSong = async (req, res) => {
   };
 };
 
-// follow an artist
-const addArtist = async (req, res) => {
-  try {
-    const updatedUser = await db.User.findById(req.session.currentUser.id);
-    // const updatedUser = await db.User.findById(req.params.id);
-    updatedUser.following.push(req.params.artistId);
-    updatedUser.save();
-    res.status(200).json(updatedUser);
-  } catch (err) {
-    return res.status(500).json({ message: "Something went wrong, try again" });
-  }
-};
-
-// unfollow an artist
-const removeArtist = async (req, res) => {
-  try {
-    let updatedUser = await db.User.findById(req.session.currentUser.id);
-    // const updatedUser = await db.User.findById(req.params.id);
-    updatedUser.players.pull({ _id: req.params.artistId })
-    updatedUser.save();
-    res.status(200).json(updatedUser);
-  } catch (err) {
-    return res.status(500).json({ message: "Something went wrong, try again", err: err });
-  };
-};
-
 // delete user's account
 const destroy = (req, res) => {
   db.User.findByIdAndDelete(req.params.id, (err, deletedUser) => {
@@ -91,9 +91,9 @@ const destroy = (req, res) => {
 module.exports = {
   show,
   edit,
-  addSong,
-  removeSong,
   addArtist,
   removeArtist,
+  addSong,
+  removeSong,
   destroy
 };
