@@ -27,10 +27,10 @@ const UserSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Song'
   }],
-  uploads: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Song'
-  }],
+  // uploads: [{
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'Song'
+  // }],
 });
 
 const User = mongoose.model('User', UserSchema);
