@@ -38,7 +38,10 @@ app.use(
 );
 
 // ----------------------------------- Routes ----------------------------------- //
-
+app.use('/api/v1/auth', routes.auth);
+app.use('/api/v1/users', routes.users);
+app.use('/api/v1/artists', routes.artists);
+app.use('/api/v1/songs', routes.songs);
 
 // ----------------------------------- Start Server ----------------------------------- //
 app.listen(PORT, () =>
