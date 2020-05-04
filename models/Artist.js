@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const ArtistSchema = mongoose.Schema({
   name: String,
-  url: String,
+  // url: String,
+  artistIndex: Number,
   songs: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Song'
