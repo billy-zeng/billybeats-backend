@@ -2,30 +2,35 @@
   "artists": [
     {
       "name": "Seven Lions",
+      "image": "https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2014/05/25232225/hak2mppaisjKrQ5e9PJb7xRwNh1KJfnvBuwNRjqo-972x597.jpeg",
       "artistIndex": 0,
       "songs": [],
       "followers": 0
     },
     {
       "name": "Travis Scott",
+      "image": "https://i1.sndcdn.com/avatars-000701366305-hu9f0i-t500x500.jpg",
       "artistIndex": 1,
       "songs": [],
       "followers": 0
     },
     {
       "name": "Porter Robinson",
+      "image": "https://edm.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_768/MTcyMzE3MTcwMDkxNDM1MjIw/16665360_1391585324233387_7529369810851483408_o.jpg",
       "artistIndex": 2,
       "songs": [],
       "followers": 0
     },
     {
       "name": "ODESZA",
+      "image": "https://d279m997dpfwgl.cloudfront.net/wp/2018/01/0126_odesza.jpg",
       "artistIndex": 3,
       "songs": [],
       "followers": 0
     },
     {
       "name": "Jai Wolf",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Jai_Wolf_in_2016.jpg",
       "artistIndex": 4,
       "songs": [],
       "followers": 0
