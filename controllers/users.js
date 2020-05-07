@@ -44,7 +44,7 @@ const removeArtist = async (req, res) => {
   try {
     let updatedUser = await db.User.findById(req.session.currentUser.id);
     // const updatedUser = await db.User.findById(req.params.id);
-    updatedUser.players.pull({ _id: req.params.artistId })
+    updatedUser.following.pull({ _id: req.params.artistId })
     updatedUser.save();
     res.status(200).json(updatedUser);
   } catch (err) {
